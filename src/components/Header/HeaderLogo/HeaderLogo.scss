@@ -1,0 +1,9 @@
+// @import url('../../../assets/scss/variables.scss');
+
+.header__logo-container {
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}

@@ -1,0 +1,13 @@
+.header__right-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    & > div {
+        padding: 4px 8px;
+        margin-left: 4px;
+        cursor: pointer;
+        color: #606060;
+    }
+}

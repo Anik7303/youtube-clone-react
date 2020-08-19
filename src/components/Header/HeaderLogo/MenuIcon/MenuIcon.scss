@@ -1,0 +1,17 @@
+.header__menu-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+
+    .header__menu-bar {
+        width: 70%;
+        height: 2px;
+        margin: 2px;
+        background-color: black;
+    }
+}

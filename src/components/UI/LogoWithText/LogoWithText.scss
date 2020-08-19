@@ -1,0 +1,27 @@
+.logo-with-text {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8px 16px;
+
+    & > .logo-with-text__logo {
+        color: inherit;
+        height: 32px;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    & > .logo-with-text__text {
+        flex: 1;
+        display: flex;
+        flex-flow: row nowrap;
+        font-size: 16px;
+        color: inherit;
+        margin: 0;
+        margin-left: 16px;
+        white-space: nowrap;
+    }
+}
