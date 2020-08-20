@@ -1,12 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 
 // css stylesheets
 import "./Create.scss";
-
-// components
-import ListItem from "../../../UI/LogoWithText/LogoWithText";
-import MakeLogo from "../../../UI/MakeLogo/MakeLogo";
 
 // icons
 import UploadIcon from "../../../../assets/icons/youtube-play.png";
@@ -15,56 +10,42 @@ import LiveIcon from "../../../../assets/icons/youtube-live-51.png";
 // material ui icons
 import VideoCallIcon from "@material-ui/icons/VideoCall";
 
-const Create = (props) => {
-    const [listStatus, setListStatus] = useState(false);
-    const listClasses = ["header__action"];
-    if (listStatus) {
-        listClasses.push("show");
-    }
+// components
+import CreateList from "../../../UI/CreateList/CreateList";
 
-    const list = [
+const Create = (props) => {
+    const [showDropdown, setShowDropdown] = useState(false);
+
+    const menuList = [
         {
             icon: UploadIcon,
-            title: "Upload Video",
+            text: "Upload Video",
             link: "/upload",
+            image: true,
         },
         {
             icon: LiveIcon,
-            title: "Go Live",
+            text: "Go Live",
             link: "/go-live",
+            image: true,
+        },
+        {
+            icon: VideoCallIcon,
+            text: "Video Call",
+            link: "/video-call",
+            image: false,
         },
     ];
     return (
         <div
             className="header__actions-create"
-            onClick={() => setListStatus(!listStatus)}
+            onClick={() => setShowDropdown(!showDropdown)}
         >
             <VideoCallIcon
                 className="icon"
-                onClick={() => setListStatus(!listStatus)}
+                onClick={() => setShowDropdown(!showDropdown)}
             />
-            <ul className={listClasses.join(" ")}>
-                {list.map((item) => {
-                    return (
-                        <li>
-                            <Link
-                                className="header__action-link"
-                                to={item.link}
-                            >
-                                <ListItem
-                                    icon={() => (
-                                        <MakeLogo
-                                            logo={item.icon}
-                                            title={item.title}
-                                        />
-                                    )}
-                                    text={item.title}
-                                />
-                            </Link>
-                        </li>
-                    );
-                })}
-            </ul>
+            <CreateList list={menuList} show={showDropdown} />
         </div>
     );
 };

@@ -10,4 +10,9 @@
         cursor: pointer;
         color: #606060;
     }
+
+    div:first-of-type .create-list {
+        left: 0;
+        right: unset;
+    }
 }

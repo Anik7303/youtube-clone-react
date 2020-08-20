@@ -10,6 +10,7 @@ import MainSection from "../../components/MainSection/MainSection";
 import Footer from "../../components/Footer/Footer";
 
 const App = (props) => {
+    console.log(props);
     return (
         <Fragment>
             <Header />
