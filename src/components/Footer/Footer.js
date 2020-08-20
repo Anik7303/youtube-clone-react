@@ -6,12 +6,12 @@ const Footer = (props) => {
     return (
         <footer className="footer-main">
             <p>
-                2020 &copy;{" "}
+                &copy; 2020{" "}
                 <span className="footer__author">Anik Mohammad</span>
             </p>
             <p className="footer__credits-icon">
-                Icons used from <a href="https://icons8.com/icons">Icons8</a> &{" "}
-                <a href="https://material-ui.com">Material Icons</a>
+                Icons used from <a href="https://icons8.com/icons" target="_blank">Icons8</a> &{" "}
+                <a href="https://material-ui.com" target="_blank">Material Icons</a>
             </p>
         </footer>
     );

@@ -8,15 +8,14 @@ import "./LogoWithText.scss";
 import CreateLogo from "../CreateLogo/CreateLogo";
 
 const LogoWithText = (props) => {
-    const Icon = props.icon;
     return (
         <div className="logo-with-text">
             <div className="logo-with-text__logo">
-                {/* <Icon className="icon" /> */}
                 <CreateLogo
                     logo={props.icon}
                     title={props.text}
                     image={props.image}
+                    styles={props.iconStyles}
                 />
             </div>
             <p className="logo-with-text__text">{props.text}</p>
@@ -25,12 +24,8 @@ const LogoWithText = (props) => {
 };
 
 LogoWithText.propTypes = {
-    icon: PropTypes.func.isRequired,
+    icon: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
     text: PropTypes.string.isRequired,
 };
 
 export default LogoWithText;
-
-{
-    /* <Icon className="icon" /> */
-}

@@ -7,7 +7,6 @@ import "./CreateList.scss";
 
 // components
 import LogoWithText from "../LogoWithText/LogoWithText";
-import CreateLogo from "../CreateLogo/CreateLogo";
 
 const CreateList = (props) => {
     const listClasses = ["create-list"];
@@ -24,17 +23,8 @@ const CreateList = (props) => {
                                 icon={item.icon}
                                 text={item.text}
                                 image={item.image}
+                                iconStyles={item.iconStyles}
                             />
-                            {/* <LogoWithText
-                                icon={() => (
-                                    <CreateLogo
-                                        logo={item.icon}
-                                        title={item.text}
-                                        image={item.image}
-                                    />
-                                )}
-                                text={item.text}
-                            /> */}
                         </Link>
                     </li>
                 );
@@ -44,7 +34,16 @@ const CreateList = (props) => {
 };
 
 CreateList.propTypes = {
-    list: PropTypes.array.isRequired,
+    list: PropTypes.arrayOf(
+        PropTypes.exact({
+            icon: PropTypes.oneOfType([PropTypes.string, PropTypes.object])
+                .isRequired,
+            text: PropTypes.string.isRequired,
+            link: PropTypes.string,
+            image: PropTypes.bool.isRequired,
+            iconStyles: PropTypes.object,
+        })
+    ),
     show: PropTypes.bool,
 };
 

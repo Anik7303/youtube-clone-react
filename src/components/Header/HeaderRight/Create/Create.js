@@ -22,18 +22,21 @@ const Create = (props) => {
             text: "Upload Video",
             link: "/upload",
             image: true,
+            iconStyles: null,
         },
         {
             icon: LiveIcon,
             text: "Go Live",
             link: "/go-live",
             image: true,
+            iconStyles: null,
         },
         {
             icon: VideoCallIcon,
             text: "Video Call",
             link: "/video-call",
             image: false,
+            iconStyles: null,
         },
     ];
     return (

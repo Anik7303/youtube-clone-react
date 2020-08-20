@@ -15,7 +15,7 @@ const CreateLogo = (props) => {
         );
     }
     const Icon = props.logo;
-    return <Icon className="create-logo__logo-image" />;
+    return <Icon className="create-logo__logo-image" style={props.styles} />;
 };
 
 export default CreateLogo;
